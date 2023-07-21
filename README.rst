@@ -1,3 +1,8 @@
+MOD1: performance
+MOD2: compat for pickle.load version 2
+
+--------------------------------------------------------
+
 Pendulum
 ########
 

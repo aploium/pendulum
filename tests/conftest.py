@@ -6,6 +6,7 @@ import pytest
 
 import pendulum
 
+
 if TYPE_CHECKING:
     from collections.abc import Iterator
 
@@ -18,8 +19,8 @@ def setup() -> Iterator[None]:
 
     pendulum.set_locale("en")
     pendulum.set_local_timezone()
-    pendulum.week_starts_at(pendulum.MONDAY)
-    pendulum.week_ends_at(pendulum.SUNDAY)
+    pendulum.week_starts_at(pendulum.WeekDay.MONDAY)
+    pendulum.week_ends_at(pendulum.WeekDay.SUNDAY)
 
 
 def assert_datetime(

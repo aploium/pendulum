@@ -1,5 +1,40 @@
 # Change Log
 
+## [3.0.0] - 2023-12-16
+
+### Changed
+
+- Relaxed dependency constraints. [#760](https://github.com/sdispater/pendulum/pull/760)
+- The testing helpers are now  optional and must be opted-in via the `test` extra. [#778](https://github.com/sdispater/pendulum/pull/778)
+
+### Fixed
+
+- Removed remaining mentions of periods instead of intervals. [#757](https://github.com/sdispater/pendulum/pull/757)
+- Fixed the behavior of the `week_of_month` property for edge cases in January and December. [#774](https://github.com/sdispater/pendulum/pull/774)
+- Fixed the handling of the `fold` attribute when deep-copying a `DateTime` instance. [#776](https://github.com/sdispater/pendulum/pull/776)
+- Fixed errors where hours and days were not handled properly when adding durations. [#775](https://github.com/sdispater/pendulum/pull/775)
+- Fixed errors where hours and days were not handled properly when adding durations. [#775](https://github.com/sdispater/pendulum/pull/775)
+
+
+## [3.0.0b1] - 2023-10-01
+
+### Added
+
+- Made `instance()` support all native types (date, time, datetime). [#732](https://github.com/sdispater/pendulum/pull/732)
+
+### Changed
+
+- Dropped support for Python 3.7. [#734](https://github.com/sdispater/pendulum/pull/734)
+- Rewrote extensions in Rust. [#721](https://github.com/sdispater/pendulum/pull/721)
+- Made day of week convention more consistent across the codebase. [#731](https://github.com/sdispater/pendulum/pull/731)
+
+### Fixed
+
+- Fixed datetime string representation to match the native library. [#733](https://github.com/sdispater/pendulum/pull/733)
+- Fixed issues on some system when retrieving the local timezone. [#733](https://github.com/sdispater/pendulum/pull/733)
+- Fixed DST handling in `start_of()/end_of()` methods. [#713](https://github.com/sdispater/pendulum/pull/713)
+
+
 ## [3.0.0a1] - 2022-11-23
 
 ### Added
@@ -165,7 +200,9 @@
 
 
 
-[Unreleased]: https://github.com/sdispater/pendulum/compare/3.0.0a1...master
+[Unreleased]: https://github.com/sdispater/pendulum/compare/3.0.0...master
+[3.0.0]: https://github.com/sdispater/pendulum/releases/tag/3.0.0
+[3.0.0b1]: https://github.com/sdispater/pendulum/releases/tag/3.0.0b1
 [3.0.0a1]: https://github.com/sdispater/pendulum/releases/tag/3.0.0a1
 [2.1.1]: https://github.com/sdispater/pendulum/releases/tag/2.1.1
 [2.1.0]: https://github.com/sdispater/pendulum/releases/tag/2.1.0

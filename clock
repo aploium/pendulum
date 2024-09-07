@@ -47,7 +47,6 @@ class _LambdaCompiler(_GettextCompiler):
 
 
 class LocaleCreate(Command):
-
     name = "locale create"
     description = "Creates locale translations."
 
@@ -113,8 +112,8 @@ translations = {{}}
             data["days"] = {}
             for fmt, names in days.items():
                 data["days"][fmt] = {}
-                for value, name in names.items():
-                    data["days"][fmt][(value + 1) % 7] = name
+                for value, name in sorted(names.items()):
+                    data["days"][fmt][value] = name
 
             # Getting months names
             months = content["months"]["format"]
@@ -158,6 +157,9 @@ translations = {{}}
 
             # Day periods
             data["day_periods"] = content["day_periods"]["format"]["wide"]
+
+            # Week data
+            data["week_data"] = content["week_data"]
 
             result = self.TEMPLATE.format(
                 locale=locale,
@@ -229,7 +231,6 @@ translations = {{}}
 
 
 class LocaleRecreate(Command):
-
     name = "locale recreate"
     description = "Recreate existing locales."
 
@@ -240,11 +241,10 @@ class LocaleRecreate(Command):
         locales = glob.glob(os.path.join(locales_dir, "*", "locale.py"))
         locales = [os.path.basename(os.path.dirname(locale)) for locale in locales]
 
-        self.call("locale:create", [("locales", locales)])
+        self.call("locale create", "locales " + " ".join(locales))
 
 
 class WindowsTzDump(Command):
-
     name = "windows dump-timezones"
     description = "Dumps the mapping of Windows timezones to IANA timezones."
 

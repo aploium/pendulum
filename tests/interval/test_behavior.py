@@ -40,15 +40,28 @@ def test_comparison_to_timedelta():
     dt1 = pendulum.datetime(2016, 11, 18)
     dt2 = pendulum.datetime(2016, 11, 20)
 
-    period = dt2 - dt1
+    interval = dt2 - dt1
 
-    assert period < timedelta(days=4)
+    assert interval < timedelta(days=4)
 
 
 def test_equality_to_timedelta():
     dt1 = pendulum.datetime(2016, 11, 18)
     dt2 = pendulum.datetime(2016, 11, 20)
 
-    period = dt2 - dt1
+    interval = dt2 - dt1
 
-    assert period == timedelta(days=2)
+    assert interval == timedelta(days=2)
+
+
+def test_inequality():
+    dt1 = pendulum.datetime(2016, 11, 18)
+    dt2 = pendulum.datetime(2016, 11, 20)
+    dt3 = pendulum.datetime(2016, 11, 22)
+
+    interval1 = dt2 - dt1
+    interval2 = dt3 - dt2
+    interval3 = dt3 - dt1
+
+    assert interval1 != interval2
+    assert interval1 != interval3

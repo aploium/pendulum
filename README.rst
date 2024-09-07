@@ -12,9 +12,6 @@ Pendulum
 .. image:: https://img.shields.io/pypi/l/pendulum.svg
     :target: https://pypi.python.org/pypi/pendulum
 
-.. image:: https://img.shields.io/codecov/c/github/sdispater/pendulum/master.svg
-    :target: https://codecov.io/gh/sdispater/pendulum/branch/master
-
 .. image:: https://github.com/sdispater/pendulum/actions/workflows/tests.yml/badge.svg
     :alt: Pendulum Build status
     :target: https://github.com/sdispater/pendulum/actions
@@ -22,7 +19,7 @@ Pendulum
 
 Python datetimes made easy.
 
-Supports Python **2.7** and **3.4+**.
+Supports Python **3.8 and newer**.
 
 
 .. code-block:: python
@@ -61,6 +58,13 @@ Supports Python **2.7** and **3.4+**.
    '2013-03-31T03:00:00+02:00'
 
 
+Resources
+=========
+
+* `Official Website <https://pendulum.eustace.io>`_
+* `Documentation <https://pendulum.eustace.io/docs/>`_
+* `Issue Tracker <https://github.com/sdispater/pendulum/issues>`_
+
 Why Pendulum?
 =============
 
@@ -71,7 +75,7 @@ So it's still ``datetime`` but better.
 
 Unlike other datetime libraries for Python, Pendulum is a drop-in replacement
 for the standard ``datetime`` class (it inherits from it), so, basically, you can replace all your ``datetime``
-instances by ``DateTime`` instances in you code (exceptions exist for libraries that check
+instances by ``DateTime`` instances in your code (exceptions exist for libraries that check
 the type of the objects by using the ``type`` function like ``sqlite3`` or ``PyMySQL`` for instance).
 
 It also removes the notion of naive datetimes: each ``Pendulum`` instance is timezone-aware
@@ -124,14 +128,6 @@ a possible solution, if any:
                 return value.to_datetime_string()
 
             return '' if val is None else val.isoformat()
-
-
-Resources
-=========
-
-* `Official Website <https://pendulum.eustace.io>`_
-* `Documentation <https://pendulum.eustace.io/docs/>`_
-* `Issue Tracker <https://github.com/sdispater/pendulum/issues>`_
 
 
 Contributing
